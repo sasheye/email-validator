@@ -57,3 +57,10 @@ python3 -m unittest discover -s tests -v
 - `AI_USAGE.md`: сведения об использовании ИИ.
 
 История и отчёты исключены из Git. Посмотреть коммиты: `git log --oneline`.
+
+Тестовые файлы также можно запускать напрямую из редактора или терминала:
+
+```sh
+python3 tests/test_validator.py
+python3 tests/test_files.py
+```

@@ -1,6 +1,12 @@
 """Проверки правил учебного валидатора."""
 
 import unittest
+import sys
+from pathlib import Path
+
+# При прямом запуске добавляем корень проекта для импорта модулей.
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from validator import validate_email
 

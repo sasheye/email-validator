@@ -3,7 +3,12 @@
 import json
 import tempfile
 import unittest
+import sys
 from pathlib import Path
+
+# При прямом запуске добавляем корень проекта для импорта модулей.
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from file_operations import check_file, save_report
 from history import append_history, load_history
@@ -48,3 +53,7 @@ class FileTests(unittest.TestCase):
                 with self.assertRaises((ValueError, json.JSONDecodeError)):
                     append_history(path, [])
                 self.assertEqual(path.read_text(encoding="utf-8"), content)
+
+
+if __name__ == "__main__":
+    unittest.main()
