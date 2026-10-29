@@ -1,0 +1,7 @@
+user@example.com
+first.last@sub.domain.co.uk
+name+tag@example.org
+@domain.com
+user@.com.ua
+user@domain
+user@domain..com
